@@ -411,3 +411,57 @@ test('rank case 13. Voyage is west-indies and length is 5. ', t => {
 
   t.is(result, 'B');
 });
+
+test('rank case 14. Voyage is west-indies and length is 9. ', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 9,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+
+  const result = rating(voyage,history);
+
+  t.is(result, 'B');
+});
+
+test('rank case 14. Voyage is west-indies and length is 9. ', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 9,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+
+  const result = rating(voyage,history);
+
+  t.is(result, 'B');
+});
