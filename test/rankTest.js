@@ -330,10 +330,38 @@ test('rank case 11. Voyage is east-indies and length is 15 and history length is
   t.is(result, 'A');
 });
 
-test('rank case 1. Voyage is west-indies and length is 10. ', t => {
+test('rank case 11. Voyage is west-indies and length is 10. ', t => {
   const voyage = {
     zone: 'west-indies',
     length: 10,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },{
+      zone: 'china',
+      profit: -2,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+
+  const result = rating(voyage,history);
+
+  t.is(result, 'B');
+});
+
+
+test('rank case 12. Voyage is west-indies and length is 3. ', t => {
+  const voyage = {
+    zone: 'west-indies',
+    length: 3,
   };
   const history = [
     {
