@@ -57,3 +57,27 @@ test('rank case 2. Voyage is china and length is 10. ', t => {
 
   t.is(result, 'A');
 });
+
+test('rank case 3. Voyage is china and length is 10 and without history china. ', t => {
+  const voyage = {
+    zone: 'china',
+    length: 10,
+  };
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },{
+      zone: 'west-indies',
+      profit: 15,
+    },
+    {
+      zone: 'west-africa',
+      profit: 7,
+    },
+  ];
+
+  const result = rating(voyage,history);
+
+  t.is(result, 'B');
+});
