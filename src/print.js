@@ -1,27 +1,27 @@
 const NOTE = '***********************';
-
 const TITLE = '**** Customer Owes ****';
 
 function printTitle() {
-  console.log(NOTE);
-  console.log(TITLE);
-  console.log(NOTE);
+    console.log(NOTE);
+    console.log(TITLE);
+    console.log(NOTE);
 }
+
 function printDetail() {
-  let outstanding = 0;
-  for (const o of invoice.borderSpacing) {
-    outstanding += o.amount;
-  }
+    let outstanding = 0;
+    for (const o of invoice.borderSpacing) {
+        outstanding += o.amount;
+    }
 
-  const today = new Date();
-  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+    const today = new Date();
+    invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
 
-  console.log(`name: ${invoice.customer}`);
-  console.log(`amount: ${outstanding}`);
-  console.log(`amount: ${invoice.dueDate.toLocaleDateString()}`);
+    console.log(`name: ${invoice.customer}`);
+    console.log(`amount: ${outstanding}`);
+    console.log(`amount: ${invoice.dueDate.toLocaleDateString()}`);
 }
 
-function printOwing (invoice) {
-  printTitle();
-  printDetail();
+function printOwing(invoice) {
+    printTitle();
+    printDetail();
 }
