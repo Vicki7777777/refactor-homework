@@ -12,13 +12,17 @@ class Employee {
   }
 
   validateType (type) {
-    if (![
+    if (!this.judgeType(type)) {
+      throw new Error(`Employee cannot be of type ${type}`);
+    }
+  }
+
+  judgeType(type) {
+    return [
       ENGINEER,
       MANAGER,
       SALESMAN,
-    ].includes(type)) {
-      throw new Error(`Employee cannot be of type ${type}`);
-    }
+    ].includes(type);
   }
 
   toString () {
