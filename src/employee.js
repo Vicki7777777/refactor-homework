@@ -1,3 +1,5 @@
+const ENGINEER = 'engineer';
+
 class Employee {
   constructor (name, type) {
     this.validateType(type);
@@ -7,7 +9,7 @@ class Employee {
 
   validateType (type) {
     if (![
-      'engineer',
+      ENGINEER,
       'manager',
       'salesman',
     ].includes(type)) {
