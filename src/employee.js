@@ -2,6 +2,8 @@ const ENGINEER = 'engineer';
 
 const MANAGER = 'manager';
 
+const SALESMAN = 'salesman';
+
 class Employee {
   constructor (name, type) {
     this.validateType(type);
@@ -13,7 +15,7 @@ class Employee {
     if (![
       ENGINEER,
       MANAGER,
-      'salesman',
+      SALESMAN,
     ].includes(type)) {
       throw new Error(`Employee cannot be of type ${type}`);
     }
