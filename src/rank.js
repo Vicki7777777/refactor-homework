@@ -2,9 +2,9 @@ function voyageRisk (voyage) {
   let result = 1;
   if (voyage.length > 4) {
     result += 2;
-  }
-  if (voyage.length > 8) {
-    result += voyage.length - 8;
+    if (voyage.length > 8) {
+      result += voyage.length - 8;
+    }
   }
   if ([
     'china',
@@ -90,4 +90,6 @@ const history = [
   },
 ];
 const myRating = rating(voyage, history);
+
+
 console.log(`myRating: ${myRating}`);
