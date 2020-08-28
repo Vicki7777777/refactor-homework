@@ -42,9 +42,7 @@ function voyageProfitFactor (voyage, history) {
       result += (voyage.length > 12 && voyage.length <19) ? 1 : 0;
     }
   }
-  if (history.length > 8 && voyage.length < 15) {
-    result += 1;
-  }
+  result += (history.length > 8 && voyage.length < 15) ? 1 : 0;
   return result;
 }
 
