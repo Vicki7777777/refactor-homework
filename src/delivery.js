@@ -4,36 +4,37 @@ const NY = 'NY';
 const NH = 'NH';
 const ME = 'ME';
 
+function judgeOrderWithMA_CT() {
+  return [
+    MA,
+    CT,
+  ].includes(anOrder.deliveryState);
+}
+
+function judgeOrderWithNY_NH() {
+  return [
+    NY,
+    NH,
+  ].includes(anOrder.deliveryState);
+}
+
+function judgeOrderWithMA_CT_NY() {
+  return [
+    MA,
+    CT,
+    NY,
+  ].includes(anOrder.deliveryState);
+}
+
+function judgeOrderWithME_NH() {
+  return [
+    ME,
+    NH,
+  ].includes(anOrder.deliveryState);
+}
+
+
 function deliveryDate (anOrder, isRush) {
-  function judgeOrderWithMA_CT() {
-    return [
-      MA,
-      CT,
-    ].includes(anOrder.deliveryState);
-  }
-
-  function judgeOrderWithNY_NH() {
-    return [
-      NY,
-      NH,
-    ].includes(anOrder.deliveryState);
-  }
-
-  function judgeOrderWithMA_CT_NY() {
-    return [
-      MA,
-      CT,
-      NY,
-    ].includes(anOrder.deliveryState);
-  }
-
-  function judgeOrderWithME_NH() {
-    return [
-      ME,
-      NH,
-    ].includes(anOrder.deliveryState);
-  }
-
   if (isRush) {
     let deliveryTime;
     if (judgeOrderWithMA_CT()) {
