@@ -1,6 +1,7 @@
 const MA = 'MA';
 const CT = 'CT';
 const NY = 'NY';
+const NH = 'NH';
 
 function deliveryDate (anOrder, isRush) {
   if (isRush) {
@@ -13,7 +14,7 @@ function deliveryDate (anOrder, isRush) {
     }
     else if ([
       NY,
-      'NH',
+      NH,
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 2;
     }
@@ -33,7 +34,7 @@ function deliveryDate (anOrder, isRush) {
     }
     else if ([
       'ME',
-      'NH',
+      NH,
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 3;
     }
