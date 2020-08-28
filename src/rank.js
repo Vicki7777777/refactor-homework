@@ -1,3 +1,5 @@
+const CHINA = 'china';
+const EAST_INDIES = 'east-indies';
 function voyageRisk(voyage) {
     let result = 1;
     if (voyage.length > 4) {
@@ -7,7 +9,7 @@ function voyageRisk(voyage) {
 
     if ([
         CHINA,
-        'east-indies',
+        EAST_INDIES,
     ].includes(voyage.zone)) {
         result += 4;
     }
@@ -18,8 +20,6 @@ function hasChina(history) {
     return history.some(v => CHINA === v.zone);
 }
 
-const CHINA = 'china';
-
 function captainHistoryRisk(voyage, history) {
     let result = 1;
     result += (history.length < 5) ? 4 : 0;
@@ -28,9 +28,10 @@ function captainHistoryRisk(voyage, history) {
     return Math.max(result, 0);
 }
 
+
 function voyageProfitFactor(voyage, history) {
     let result = 2;
-    if (voyage.zone === CHINA || voyage.zone === 'east-indies') {
+    if (voyage.zone === CHINA || voyage.zone === EAST_INDIES) {
         result += 1;
         if (voyage.zone === CHINA && hasChina(history)) {
             result += 3;
