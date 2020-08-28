@@ -5,12 +5,16 @@ const NH = 'NH';
 const ME = 'ME';
 
 function deliveryDate (anOrder, isRush) {
-  if (isRush) {
-    let deliveryTime;
-    if ([
+  function judgeOrderWithMA_CT() {
+    return [
       MA,
       CT,
-    ].includes(anOrder.deliveryState)) {
+    ].includes(anOrder.deliveryState);
+  }
+
+  if (isRush) {
+    let deliveryTime;
+    if (judgeOrderWithMA_CT()) {
       deliveryTime = 1;
     }
     else if ([
