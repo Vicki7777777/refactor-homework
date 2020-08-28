@@ -1,7 +1,9 @@
+const NOTE = '***********************';
+
 function printTitle() {
-  console.log('***********************');
+  console.log(NOTE);
   console.log('**** Customer Owes ****');
-  console.log('***********************');
+  console.log(NOTE);
 }
 function printDetail() {
   let outstanding = 0;
