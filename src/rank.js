@@ -35,14 +35,14 @@ function voyageProfitFactor (voyage, history) {
   let result = 2;
   if (voyage.zone === 'china' || voyage.zone === 'east-indies') {
     result += 1;
-  }
-  if (voyage.zone === 'china' && hasChina(history)) {
-    result += 3;
-    if (history.length > 10) {
-      result += 1;
-    }
-    if (voyage.length > 12 && voyage.length <19) {
-      result += 1;
+    if (voyage.zone === 'china' && hasChina(history)) {
+      result += 3;
+      if (history.length > 10) {
+        result += 1;
+      }
+      if (voyage.length > 12 && voyage.length <19) {
+        result += 1;
+      }
     }
   }
   else {
