@@ -1,8 +1,12 @@
-function printOwing (invoice) {
-  let outstanding = 0;
+function printTitle() {
   console.log('***********************');
   console.log('**** Customer Owes ****');
   console.log('***********************');
+}
+
+function printOwing (invoice) {
+  let outstanding = 0;
+  printTitle();
 
   for (const o of invoice.borderSpacing) {
     outstanding += o.amount;
