@@ -12,15 +12,19 @@ function deliveryDate (anOrder, isRush) {
     ].includes(anOrder.deliveryState);
   }
 
+  function judgeOrderWithNY_NH() {
+    return [
+      NY,
+      NH,
+    ].includes(anOrder.deliveryState);
+  }
+
   if (isRush) {
     let deliveryTime;
     if (judgeOrderWithMA_CT()) {
       deliveryTime = 1;
     }
-    else if ([
-      NY,
-      NH,
-    ].includes(anOrder.deliveryState)) {
+    else if (judgeOrderWithNY_NH()) {
       deliveryTime = 2;
     }
     else {
