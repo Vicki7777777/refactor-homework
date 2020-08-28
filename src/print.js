@@ -1,8 +1,10 @@
 const NOTE = '***********************';
 
+const TITLE = '**** Customer Owes ****';
+
 function printTitle() {
   console.log(NOTE);
-  console.log('**** Customer Owes ****');
+  console.log(TITLE);
   console.log(NOTE);
 }
 function printDetail() {
