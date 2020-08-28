@@ -1,11 +1,12 @@
 const MA = 'MA';
+const CT = 'CT';
 
 function deliveryDate (anOrder, isRush) {
   if (isRush) {
     let deliveryTime;
     if ([
       MA,
-      'CT',
+      CT,
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 1;
     }
@@ -24,7 +25,7 @@ function deliveryDate (anOrder, isRush) {
     let deliveryTime;
     if ([
       MA,
-      'CT',
+      CT,
       'NY',
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 2;
