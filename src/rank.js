@@ -6,6 +6,7 @@ function voyageRisk (voyage) {
       result += voyage.length - 8;
     }
   }
+
   if ([
     'china',
     'east-indies',
@@ -37,9 +38,10 @@ function voyageProfitFactor (voyage, history) {
     result += 1;
     if (voyage.zone === 'china' && hasChina(history)) {
       result += 3;
-      if (history.length > 10) {
-        result += 1;
-      }
+      // if (history.length > 10) {
+      //   result += 1;
+      // }
+      result += (history.length > 10) ? 1 : 0;
       if (voyage.length > 12 && voyage.length <19) {
         result += 1;
       }
