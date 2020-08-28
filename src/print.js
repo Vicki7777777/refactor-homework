@@ -3,11 +3,8 @@ function printTitle() {
   console.log('**** Customer Owes ****');
   console.log('***********************');
 }
-
-function printOwing (invoice) {
+function printDetail() {
   let outstanding = 0;
-  printTitle();
-
   for (const o of invoice.borderSpacing) {
     outstanding += o.amount;
   }
@@ -18,4 +15,9 @@ function printOwing (invoice) {
   console.log(`name: ${invoice.customer}`);
   console.log(`amount: ${outstanding}`);
   console.log(`amount: ${invoice.dueDate.toLocaleDateString()}`);
+}
+
+function printOwing (invoice) {
+  printTitle();
+  printDetail();
 }
