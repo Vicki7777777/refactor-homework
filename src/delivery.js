@@ -36,15 +36,12 @@ function judgeOrderWithME_NH() {
 
 function deliveryDate (anOrder, isRush) {
   if (isRush) {
-    let deliveryTime;
+    let deliveryTime = 3;
     if (judgeOrderWithMA_CT()) {
       deliveryTime = 1;
     }
     else if (judgeOrderWithNY_NH()) {
       deliveryTime = 2;
-    }
-    else {
-      deliveryTime = 3;
     }
     return anOrder.placedOn.plusDays(1 + deliveryTime);
   }
