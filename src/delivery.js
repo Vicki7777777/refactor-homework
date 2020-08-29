@@ -46,15 +46,12 @@ function deliveryDate (anOrder, isRush) {
     return anOrder.placedOn.plusDays(1 + deliveryTime);
   }
   else {
-    let deliveryTime;
+    let deliveryTime = 4;
     if (judgeOrderWithMA_CT_NY()) {
       deliveryTime = 2;
     }
     else if (judgeOrderWithME_NH()) {
       deliveryTime = 3;
-    }
-    else {
-      deliveryTime = 4;
     }
     return anOrder.placedOn.plusDays(2 + deliveryTime);
   }
